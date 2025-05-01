@@ -1,0 +1,27 @@
+# Copyright (c) 2025 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+CONFIG_SOC_SERIES_NRF52X=y
+CONFIG_SOC_NRF52840_QIAA=y
+CONFIG_BOARD_XIAO_NRF52840=y
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+# Enable USB
+CONFIG_USB=y
+CONFIG_ZMK_USB=y
+
+# Enable bluetooth
+CONFIG_ZMK_BLE=y
+
+# Enable encoder
+CONFIG_EC11=n
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=n
+
+# Enable underglow
+CONFIG_ZMK_RGB_UNDERGLOW=n
+CONFIG_WS2812_STRIP=n
