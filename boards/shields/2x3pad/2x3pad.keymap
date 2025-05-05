@@ -24,7 +24,7 @@
         fn_layer {
             bindings = <
                 &bt BT_CLR    &bt BT_PRV    &bt BT_NXT
-                &out OUT_TOG         &trans         &bt BT_SEL 0
+                &out OUT_TOG         &trans         &studio_unlock
             >;
         };
     };
