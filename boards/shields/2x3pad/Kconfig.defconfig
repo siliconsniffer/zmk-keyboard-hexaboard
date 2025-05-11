@@ -1,6 +1,0 @@
-if SHIELD_2X3PAD
-
-config ZMK_KEYBOARD_NAME
-    string "2x3 Pad"
-    default "2x3Pad"
-endif

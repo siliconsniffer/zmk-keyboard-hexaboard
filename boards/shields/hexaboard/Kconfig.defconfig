@@ -1,0 +1,6 @@
+if SHIELD_HEXABOARD
+
+config ZMK_KEYBOARD_NAME
+    string "Hexaboard"
+    default "Hexaboard"
+endif

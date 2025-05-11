@@ -1,2 +1,0 @@
-config SHIELD_2X3PAD
-    def_bool $(shields_list_contains,2x3pad)
