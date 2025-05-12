@@ -10,22 +10,64 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_tog_layer {
+            key-positions = <1 4>;
+            timeout-ms = <50>;
+            bindings = <&tog 1>;
+        };
+        combo_down {
+            key-positions = <3 5>;
+            timeout-ms = <50>;
+            bindings = <&kp DOWN>;
+            layers = <1>;
+        };
+
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
 
         default_layer {
+            label = "Default";
             bindings = <
-                &kp A     &kp B     &kp C
-                &kp D     &mo 1     &mt bootloader F
+                &lt 1 E     &kp W     &kp E
+                &kp A       &kp S     &kp D
             >;
         };
 
-        fn_layer {
+        presentation_layer {
+            label = "Presentation";
             bindings = <
-                &bt BT_CLR    &bt BT_PRV    &bt BT_NXT
-                &out OUT_TOG         &trans         &studio_unlock
+                &lt 2 ESC  &kp UP     &kp RET
+                &kp LEFT   &kp SPACE  &kp RIGHT
             >;
+        };
+
+        layer_2 {
+            label = "Bluetooth";
+            bindings = <
+                &trans        &bt BT_PRV    &bt BT_NXT
+                &out OUT_TOG  &bt BT_CLR    &mo 3
+            >;
+        };
+
+        layer_3 {
+            label = "System";
+            bindings = <
+                &none &bootloader &studio_unlock
+                &none &trans      &none
+            >;
+        };
+
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
         };
     };
 };
