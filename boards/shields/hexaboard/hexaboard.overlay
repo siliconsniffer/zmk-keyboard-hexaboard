@@ -8,6 +8,8 @@
 #include <physical_layouts.dtsi>
 
 / {
+    bt_name = "Hexaboard";
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
