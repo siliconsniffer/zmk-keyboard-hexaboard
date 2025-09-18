@@ -8,11 +8,11 @@
 #include <physical_layouts.dtsi>
 
 / {
-    bt_name = "Hexaboard";
-
     chosen {
         zmk,display = &ssd1306_oled;
-    }
+    };
+
+    bt_name = "Hexaboard";
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
