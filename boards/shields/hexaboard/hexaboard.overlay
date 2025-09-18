@@ -8,6 +8,11 @@
 #include <physical_layouts.dtsi>
 
 / {
+    chosen {
+        zephyr,display = &oled;
+    };
+
+
     bt_name = "Hexaboard";
 
     kscan0: kscan {
@@ -15,11 +20,11 @@
         label = "KSCAN";
         diode-direction = "col2row";
         wakeup-source;
-        row-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        col-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH)>,
-                    <&xiao_d 5 (GPIO_ACTIVE_HIGH)>,
-                    <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
+        row-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        col-gpios = <&xiao_d 9 (GPIO_ACTIVE_HIGH)>,
+                    <&xiao_d 8 (GPIO_ACTIVE_HIGH)>,
+                    <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
     };
 
     default_transform: keymap_transform_0 {
@@ -52,16 +57,22 @@
     };
 };
 
-&i2c1 {
-    ssd1306_oled: ssd1306@3c {
+&i2c0 {
+    status = "okay";
+
+    oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
         height = <32>;
-        multiplex-ratio = <31>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
         prechargep = <0x22>;
     };
 };
