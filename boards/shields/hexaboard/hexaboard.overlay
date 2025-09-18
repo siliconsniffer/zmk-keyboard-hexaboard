@@ -32,6 +32,8 @@
         >;
     };
 
+
+
     physical_layout0: physical_layout0 {
         compatible = "zmk,physical-layout";
         display-name = "Hexaboard";
@@ -47,5 +49,19 @@
             , <&key_physical_attrs 100 100  100  100       0     0     0>
             , <&key_physical_attrs 100 100  200  100       0     0     0>
             ;
+    };
+};
+
+&i2c1 {
+    ssd1306_oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        multiplex-ratio = <31>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        prechargep = <0x22>;
     };
 };
