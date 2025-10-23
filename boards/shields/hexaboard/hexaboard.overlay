@@ -12,6 +12,7 @@
         zmk,display = &ssd1306_oled;
     };
 
+
     bt_name = "Hexaboard";
 
     kscan0: kscan {
@@ -56,7 +57,7 @@
     };
 };
 
-&i2c1 {
+&i2c0 {
     ssd1306_oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
