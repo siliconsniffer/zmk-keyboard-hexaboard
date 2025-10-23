@@ -31,7 +31,6 @@
 
 
         default_layer {
-            label = "Default";
             bindings = <
                 &lt 1 E     &kp W     &kp E
                 &kp A       &kp S     &kp D
@@ -39,7 +38,6 @@
         };
 
         presentation_layer {
-            label = "Presentation";
             bindings = <
                 &lt 2 ESC  &kp UP     &kp RET
                 &kp LEFT   &kp SPACE  &kp RIGHT
@@ -47,7 +45,6 @@
         };
 
         layer_2 {
-            label = "Bluetooth";
             bindings = <
                 &trans        &bt BT_PRV    &bt BT_NXT
                 &out OUT_TOG  &bt BT_CLR    &mo 3
@@ -55,19 +52,14 @@
         };
 
         layer_3 {
-            label = "System";
             bindings = <
                 &none &bootloader &studio_unlock
                 &none &trans      &none
             >;
         };
 
-        extra1 {
-            status = "reserved";
-        };
+        extra1 {};
 
-        extra2 {
-            status = "reserved";
-        };
+        extra2 {};
     };
 };
