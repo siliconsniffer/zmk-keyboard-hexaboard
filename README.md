@@ -1,3 +1,4 @@
+# Hexaboard
 > [!NOTE]
 > This project (and this repo) is still WIP.
 
