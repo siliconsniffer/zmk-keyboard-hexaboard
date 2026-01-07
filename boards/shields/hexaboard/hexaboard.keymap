@@ -36,7 +36,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "Default";
+            display-name = "Default";
             bindings = <
                 &lt 1 Q     &kp W     &kp E
                 &kp A       &kp S     &kp D
@@ -44,7 +44,7 @@
         };
 
         media_layer {
-            label = "Media";
+            display-name = "Media";
             bindings = <
                 &trans      &kp C_PREV     &kp C_NEXT
                 &kp C_PP    &kp C_VOL_DN   &kp C_VOL_UP
@@ -53,15 +53,23 @@
         };
 
         arrows_layer {
-            label = "Arrows";
+            display-name = "Arrows";
             bindings = <
                 &lt 2 ESC  &kp UP     &kp RET
                 &kp LEFT   &kp SPACE  &kp RIGHT
             >;
         };
 
+        bluetooth_layer {
+            display-name = "Bluetooth";
+            bindings = <
+                &trans        &bt BT_PRV    &bt BT_NXT
+                &out OUT_TOG  &bt BT_CLR    &none
+            >;
+        };
+
         system_layer {
-            label = "System";
+            display-name = "System";
             bindings = <
                 &trans &bootloader &studio_unlock
                 &none  &none       &none
